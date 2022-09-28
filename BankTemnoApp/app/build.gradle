@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.gmbuyi.BankTemnoApp"
+        applicationId "com.gmbuyi.temno"
         minSdk 26
         targetSdk 32
         versionCode 1

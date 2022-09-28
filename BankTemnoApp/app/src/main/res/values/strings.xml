@@ -4,4 +4,5 @@
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="sign_in">Sign In</string>
+    <string name="reenter_password">Reenter password</string>
 </resources>

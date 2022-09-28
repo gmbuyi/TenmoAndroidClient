@@ -1,4 +1,4 @@
-package com.gmbuyi.BankTemnoApp
+package com.gmbuyi.temno
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

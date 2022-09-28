@@ -1,4 +1,4 @@
-package com.gmbuyi.BankTemnoApp
+package com.gmbuyi.temno
 
 import org.junit.Test
 

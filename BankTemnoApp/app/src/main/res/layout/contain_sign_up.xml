@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pseudo"
+        android:hint="@string/username"
+        android:layout_margin="10dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_baseline_error_24"
+        app:startIconDrawable="@drawable/ic_person"
+        app:endIconMode="clear_text"
+        tools:ignore="MissingConstraints" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pseudo_edit"
+            android:inputType="text"
+            android:maxLength="15"/>
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:hint="@string/password"
+        android:layout_marginHorizontal="10dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_baseline_error_24"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/pseudo"
+        tools:ignore="MissingConstraints" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/psswrd_edit1"
+            android:inputType="textPassword"
+            android:maxLength="15"/>
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password1"
+        android:hint="@string/reenter_password"
+        android:layout_marginHorizontal="10dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_baseline_error_24"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:ignore="MissingConstraints" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/psswrd_edit2"
+            android:inputType="textPassword"
+            android:maxLength="15"/>
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
