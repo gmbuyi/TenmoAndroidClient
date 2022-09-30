@@ -5,4 +5,10 @@
     <string name="username">Username</string>
     <string name="sign_in">Sign In</string>
     <string name="reenter_password">Reenter password</string>
+    <string name="home">Home</string>
+    <string name="send">Send</string>
+    <string name="request">Request</string>
+    <string name="send_money">Send Money</string>
+    <string name="no_request_found">No Pending Money Request found</string>
+    <string name="no_money_sent_yet">No Money sent yet</string>
 </resources>

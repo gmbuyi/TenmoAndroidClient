@@ -21,25 +21,22 @@ class SingInDialog(context: Context, style: Int) : AlertDialog.Builder(context,s
         val pseudoInput=view.findViewById<TextInputEditText>(R.id.pseudo_edit)
         val password=view.findViewById<TextInputLayout>(R.id.password)
         val psswrdInput=view.findViewById<TextInputEditText>(R.id.psswrd_edit1)
-        val inscrire=view.findViewById<MaterialTextView>(R.id.sign_up)
+        val signUp=view.findViewById<MaterialTextView>(R.id.sign_up)
         val confirm=view.findViewById<Button>(R.id.btn_confirm)
 
 
         setView(view)
-        setError(pseudo,pseudoInput)
-        setError(password,psswrdInput)
+        setCancelable(false)
 
+        setListener(pseudo,pseudoInput)
+        setListener(password,psswrdInput)
 
-
-
-        setOnCancelListener {// act.finish()
-             }
 
         confirm.setOnClickListener {
 
             if (pseudo.error==null && password.error==null ){
 
-            cancel()
+
 
             }
 
@@ -60,11 +57,16 @@ class SingInDialog(context: Context, style: Int) : AlertDialog.Builder(context,s
         this.cancel()
     }
 
+     /*
+        Method that set textInput On text Listener
 
-    private fun setError(layout: TextInputLayout, input: TextInputEditText){
+      */
+
+
+    private fun setListener(layout: TextInputLayout, input: TextInputEditText){
 
         input.doOnTextChanged{text, start, before, count ->
-            if (text!!.length==0){
+            if (text!!.isEmpty()){
                 layout.error="is required"
 
             } else {

@@ -7,8 +7,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        setContentView(R.layout.sign_in_layout)
-        SingInDialog(this, R.style.TransparentDialog).show()
+        setContentView(R.layout.account_layout)
+       // SingUpDialog(this, R.style.TransparentDialog).show()
 
     }
 
