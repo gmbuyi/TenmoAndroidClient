@@ -10,9 +10,8 @@ Tenmo android Client App is a native android application, implemented fully in k
 	
 ## Technologies
 Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+* Retrofit2: 2.7.2
+* Gson : 2.8.8
 	
 ## Setup
 To run this project, install it locally using npm:
