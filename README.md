@@ -6,7 +6,7 @@
 
 ## General info
 Tenmo android Client App is a native android application implemented fully in kotlin thats allows Online payment service for transferring "TE bucks" between friends.
-Temno android client app consumes a Restful API implemented in java with a postgres database.  
+Temno android client app consumes a Restful API  I implemented with parterns as a capstone project during the java Program class. the Resful APi is implemented  in java with a postgres database.  
    
 	
 ## Technologies
