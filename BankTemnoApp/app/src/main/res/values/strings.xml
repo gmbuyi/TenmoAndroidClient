@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">BankTemnoApp</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="sign_up">Sign Up?</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="sign_in">Sign In</string>
@@ -11,4 +11,28 @@
     <string name="send_money">Send Money</string>
     <string name="no_request_found">No Pending Money Request found</string>
     <string name="no_money_sent_yet">No Money sent yet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="available">Available</string>
+    <string name="checking_account">Checking Account</string>
+    <string name="saving_account">Saving Account</string>
+    <string name="welcome_back">Welcome back !</string>
+    <string name="transfers">transfers</string>
+    <string name="last_transactions">LAST TRANSACTIONS</string>
+    <string name="firstname_and_lastname">Firstname and Lastname</string>
+    <string name="amount">Amount</string>
+    <string name="confirm">Confirm</string>
+    <string name="transaction_details">Transaction Details</string>
+    <string name="total_balance">TOTAL BALANCE</string>
+    <string name="currency_usd">USD Curr.</string>
+    <string name="private_acc">Private Acc.</string>
+    <string name="rejected">Rejected</string>
+    <string name="select_approve_for_approving_and_reject_for_rejecting_a_request">Approve or Reject a Request</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
 </resources>

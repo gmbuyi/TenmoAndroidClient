@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pseudo_edit"
+            android:textStyle="bold"
             android:inputType="text"
             android:maxLength="15"/>
 
@@ -48,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/psswrd_edit1"
+            android:textStyle="bold"
             android:inputType="textPassword"
             android:maxLength="15"/>
 

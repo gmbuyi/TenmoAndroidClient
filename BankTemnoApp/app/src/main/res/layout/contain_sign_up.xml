@@ -6,6 +6,8 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
@@ -22,7 +24,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pseudo_edit"
+            android:id="@+id/new_user"
             android:inputType="text"
             android:maxLength="15"/>
 
@@ -47,7 +49,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/psswrd_edit1"
+            android:id="@+id/new_password"
             android:inputType="textPassword"
             android:maxLength="15"/>
 
@@ -72,7 +74,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/psswrd_edit2"
+            android:id="@+id/new_password_confirm"
             android:inputType="textPassword"
             android:maxLength="15"/>
 

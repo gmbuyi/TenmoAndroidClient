@@ -10,14 +10,35 @@
         <entry key="..\:/Users/Gmbuyi/AndroidStudioProjects/BankTemnoApp/app/src/main/res/drawable-v24/shape_dialog.xml" value="0.1395" />
         <entry key="..\:/Users/Gmbuyi/AndroidStudioProjects/BankTemnoApp/app/src/main/res/layout/contain_connexion.xml" value="0.2" />
         <entry key="..\:/Users/Gmbuyi/AndroidStudioProjects/BankTemnoApp/app/src/main/res/layout/sign_in_layout.xml" value="0.18" />
-        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/account_layout.xml" value="0.5" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable-v24/shape.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable-v24/shape_circle.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable-v24/shape_contour.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable/ic_send.xml" value="0.136" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable/ic_transfer_send.xml" value="0.136" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable/progress_bar.xml" value="0.1605" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/drawable/visiblility_selector.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/account_layout.xml" value="0.16" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/activity_main.xml" value="0.19262295081967212" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/contain_sign_in.xml" value="0.1" />
         <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/contain_sign_up.xml" value="0.2" />
-        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.12395833333333334" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_request.xml" value="0.22" />
         <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_send.xml" value="0.2" />
-        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/sign_in_layout.xml" value="0.1" />
-        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/sign_up_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_sender.xml" value="0.18" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/fragment_transfer.xml" value="0.1" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/list_account_layout.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/progress_dialog.xml" value="0.203125" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/sign_in_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/sign_up_layout.xml" value="0.18" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/status_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/transfer_item_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/layout/transfer_layout.xml" value="0.1" />
         <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/menu/bottom_menu.xml" value="0.5" />
+        <entry key="..\:/Users/Gmbuyi/Desktop/OwnProject/BankTemnoApp/BankTemnoApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

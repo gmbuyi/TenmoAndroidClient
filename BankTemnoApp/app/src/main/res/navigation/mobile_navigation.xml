@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/navigation_home"
         android:name="com.gmbuyi.temno.ui.home.HomeFragment"
-        android:label="@string/home"
+        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.gmbuyi.temno.ui.send.SendFragment"
+        android:id="@+id/navigation_send"
+        android:name="com.gmbuyi.temno.ui.transfer.TransferFragment"
         android:label="@string/send"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/fragment_transfer" />
 
     <fragment
-        android:id="@+id/nav_request"
+        android:id="@+id/navigation_request"
         android:name="com.gmbuyi.temno.ui.request.RequestFragment"
         android:label="@string/request"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/fragment_request" />
 </navigation>
