@@ -5,6 +5,11 @@ public class StatusTransfer {
     private int transferStatusId;
     private String transferStatusDesc;
 
+    public static final int STATUS_APPROVE = 2;
+    public static final int STATUS_REJECT = 3;
+    public static final int STATUS_PENDING = 1;
+
+
     public int getTransferStatusId() {
         return transferStatusId;
     }

@@ -7,11 +7,15 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface TransferDao {
-    public boolean Create(Transfer transfer);
+    public boolean send(Transfer transfer);
+    public boolean request(Transfer transfer);
     public List<Transfer> getTransfersList(Account account);
-    public boolean updateStatus(Transfer transfer);
-    public List<Transfer> approvedTransferList(Account account);
-    public List<Transfer> pendingTransferList(Account account);
+    public boolean approveStatus(Transfer transfer);
+    public boolean rejectStatus(Transfer transfer);
+    public List<Transfer> sendTransferList(long accountId);
+    public List<Transfer> requestTransferList(long accountId);
+
+    public List<Transfer> pendingRequestTransferList(long accountId);
 
 
 }

@@ -9,6 +9,6 @@ public interface AccountDao {
      public Account getAccount(long userId);
      public boolean updateAccount( Account account);
 
-     public List<Account> getListAccount();
+     public List<Account> getListAccount(long accoundId);
      public Account getAccountByAccountId(long accountId);
 }

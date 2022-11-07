@@ -28,21 +28,35 @@ public class JdbcTransferDao implements TransferDao{
 
 
     @Override
-    public boolean Create(Transfer transfer) {
+    public boolean send(Transfer transfer) {
         String sql = "INSERT into TRANSFER(transfer_type_id, transfer_status_id, account_from, account_to, amount) " +
-                "values(?, ?, ?, ?,?)";
+                "select ?, ?, ?, ?,? where  exists ( select * from account where account_id = ? and balance >= ?)";
         return jdbcTemplate.update(sql,
                 transfer.getTypeTransfer().getTransferTypeId(),
                 transfer.getTransferStatus().getTransferStatusId(),
                 transfer.getFromAccount().getAccount_id(),
                 transfer.getToAccount().getAccount_id(),
-                transfer.getAmountForTransfer() ) == 1;
+                transfer.getAmountForTransfer(),
+                transfer.getFromAccount().getAccount_id(),
+                transfer.getAmountForTransfer()) == 1;
+    }
+
+    @Override
+    public boolean request(Transfer transfer) {
+        String sql = "INSERT into TRANSFER(transfer_type_id, transfer_status_id, account_from, account_to, amount) " +
+                "values( ?, ?, ?, ?,?) ";
+        return jdbcTemplate.update(sql,
+                transfer.getTypeTransfer().getTransferTypeId(),
+                transfer.getTransferStatus().getTransferStatusId(),
+                transfer.getFromAccount().getAccount_id(),
+                transfer.getToAccount().getAccount_id(),
+                transfer.getAmountForTransfer()) == 1;
     }
 
     @Override
      public List<Transfer> getTransfersList(Account account){
          List<Transfer> transfers = new ArrayList<>();
-         String sql = "Select * from transfer where account_from = ? or account_to = ? ";
+         String sql = "Select * from transfer where account_from = ? or account_to = ? order by transfer_id desc";
          SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql,account.getAccount_id(),account.getAccount_id() );
          while (rowSet.next()){
             Transfer transfer = mapRowToTransfer(rowSet);
@@ -54,36 +68,64 @@ public class JdbcTransferDao implements TransferDao{
      }
 
     @Override
-    public boolean updateStatus(Transfer transfer) {
-        String sql = "Update transfer set transfer_status_id = ? where transfer_id = ?";
+    public boolean rejectStatus(Transfer transfer) {
+        String sql = "Update transfer set transfer_status_id = ? where transfer_id = ? ";
         return jdbcTemplate.update(sql, transfer.getTransferStatus().getTransferStatusId(),
                 transfer.getTransferId()) == 1;
     }
 
     @Override
-    public List<Transfer> approvedTransferList(Account account) {
+    public boolean approveStatus(Transfer transfer) {
+        String sql = "Update transfer set account_to = ?, account_from = ?, transfer_status_id = ? where transfer_id = ? and " +
+                "exists ( select * from account where account_id = ? and balance >= ?)";
+        return jdbcTemplate.update(sql,
+                transfer.getToAccount().getAccount_id(),
+                transfer.getFromAccount().getAccount_id(),
+                transfer.getTransferStatus().getTransferStatusId(),
+                transfer.getTransferId(),
+                transfer.getToAccount().getAccount_id(),
+                transfer.getAmountForTransfer()) == 1;
+    }
+
+    @Override
+    public List<Transfer> sendTransferList(long account) {
         List<Transfer> transfers = new ArrayList<>();
-        String sql = "Select * from transfer where (account_from = ? or account_to = ?) and transfer_status_id > 1";
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql,account.getAccount_id(),account.getAccount_id() );
+        String sql = "Select * from transfer where (account_from = ? or account_to = ?) and transfer_status_id = 2 order by transfer_id desc";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql,account,account );
         while (rowSet.next()){
             Transfer transfer = mapRowToTransfer(rowSet);
             transfers.add(transfer);
-            System.out.println(account.getAccount_id());
+            //System.out.println(account.getAccount_id());
         }
 
         return transfers;
     }
 
     @Override
-    public List<Transfer> pendingTransferList(Account account) {
+    public List<Transfer> requestTransferList(long accountId) {
         List<Transfer> transfers = new ArrayList<>();
-        String sql = "Select * from transfer where account_to = ?  " +
-                "and transfer_status_id = 1 and transfer_type_id = 1 ";
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql,account.getAccount_id() );
+        String sql = "Select * from transfer where ( account_to = ? or account_from = ?) " +
+                "and transfer_type_id = 1  and transfer_status_id in (1,3) order by transfer_id desc";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql,accountId,accountId );
         while (rowSet.next()){
             Transfer transfer = mapRowToTransfer(rowSet);
             transfers.add(transfer);
-            System.out.println(account.getAccount_id());
+
+        }
+
+        return transfers;
+    }
+
+    @Override
+    public List<Transfer> pendingRequestTransferList(long accountId) {
+        List<Transfer> transfers = new ArrayList<>();
+        String sql = "Select * from transfer where ( account_to = ? or account_from = ?) " +
+                "and transfer_type_id = 1  and  transfer_status_id =  1 order by transfer_id desc";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql,accountId,accountId );
+        while (rowSet.next()){
+            Transfer transfer = mapRowToTransfer(rowSet);
+            transfers.add(transfer);
+
         }
 
         return transfers;

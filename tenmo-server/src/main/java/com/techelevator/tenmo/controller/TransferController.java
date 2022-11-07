@@ -3,7 +3,9 @@ package com.techelevator.tenmo.controller;
 import com.techelevator.tenmo.dao.AccountDao;
 import com.techelevator.tenmo.dao.TransferDao;
 import com.techelevator.tenmo.model.Account;
+import com.techelevator.tenmo.model.StatusTransfer;
 import com.techelevator.tenmo.model.Transfer;
+import com.techelevator.tenmo.model.TypeTransfer;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/transfers")
-//@PreAuthorize("isAuthenticated()")
+@PreAuthorize("isAuthenticated()")
 public class TransferController {
 
  TransferDao transferDao;
@@ -30,48 +32,65 @@ public class TransferController {
     }
 
 
-    @PostMapping("/listSent")
-    public List<Transfer> getListSentTransfers(@RequestBody Account account){
-        return  transferDao.approvedTransferList(account);
+    @GetMapping("/listSent/{accountId}")
+    public List<Transfer> getListSentTransfers(@PathVariable long accountId){
+        return  transferDao.sendTransferList(accountId);
     }
 
-    @PostMapping("/listRequest")
-    public List<Transfer> getListPendingTransfers(@RequestBody Account account){
-        return  transferDao.pendingTransferList(account);
+    @GetMapping("/listRequest/{accountId}")
+    public List<Transfer> getListRequestTransfers(@PathVariable long accountId){
+        return  transferDao.requestTransferList(accountId);
     }
 
+    @GetMapping("/listPendingRequest/{accountId}")
+    public List<Transfer> getPendingListRequestTransfers(@PathVariable long accountId){
+        return  transferDao.pendingRequestTransferList(accountId);
+    }
 
-
-    @PostMapping(value = "/send")
+    @PostMapping(value = "/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void SendBucks(@RequestBody Transfer transfer){
+    public Boolean makeTransfer(@RequestBody Transfer transfer){
 
-        if (transferDao.Create(transfer)) {
+         var value = false;
+
+        if (transfer.getTypeTransfer().getTransferTypeId() == TypeTransfer.ID_SEND && transferDao.send(transfer)) {
 
             accountDao.updateAccount(decreasedBalanceAccount(transfer.getFromAccount(),
                     transfer.getAmountForTransfer()));
 
             accountDao.updateAccount(increasedBalanceAccount(transfer.getToAccount(),
                                       transfer.getAmountForTransfer()));
+
+            value = true;
+
+        } else if (transfer.getTypeTransfer().getTransferTypeId() == TypeTransfer.ID_REQUEST){
+
+            value = transferDao.request(transfer);
+
         }
+
+        return value;
 
     }
 
-   @PostMapping(value = "/request")
-   @ResponseStatus(HttpStatus.CREATED)
-    public void requestBucks(@RequestBody Transfer transfer){
-       transferDao.Create(transfer);
-   }
-
    @PutMapping
    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateStatus(@RequestBody Transfer transfer){
-        if (transferDao.updateStatus(transfer)){
+    public Boolean updateStatus(@RequestBody Transfer transfer){
+
+         var value = false;
+        if ( transfer.getTransferStatus().getTransferStatusId()== StatusTransfer.STATUS_APPROVE
+                && transferDao.approveStatus(transfer)){
             accountDao.updateAccount(decreasedBalanceAccount(transfer.getToAccount(),
                     transfer.getAmountForTransfer()));
             accountDao.updateAccount(increasedBalanceAccount(transfer.getFromAccount(),
                     transfer.getAmountForTransfer()));
+            value = true;
+        } else if (transfer.getTransferStatus().getTransferStatusId() == StatusTransfer.STATUS_REJECT) {
+
+            value = transferDao.rejectStatus(transfer);
+
         }
+        return value;
    }
 
 

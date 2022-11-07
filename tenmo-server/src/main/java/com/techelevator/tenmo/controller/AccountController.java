@@ -11,27 +11,26 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-@RestController
 @RequestMapping("/accounts")
 @PreAuthorize("isAuthenticated()")
-
+@RestController
 public class AccountController {
- private AccountDao  accountDao ;
+   AccountDao  accountDao ;
 
 
     public AccountController(AccountDao accountDao) {
+
         this.accountDao = accountDao;
     }
 
-
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
-     private Account getAccount(@PathVariable int userId){
-     return accountDao.getAccount(userId);
+     public Account getAccountByUserId(@PathVariable int userId){
+     return this.accountDao.getAccount(userId);
     }
 
-    @GetMapping
-    private List<Account> getListAccount(){
-        return accountDao.getListAccount();
+    @GetMapping(value = "/list/{accountId}")
+    public List<Account> getListAccount(@PathVariable long accountId){
+        return accountDao.getListAccount(accountId);
     }
 
 }

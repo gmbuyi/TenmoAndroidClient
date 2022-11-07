@@ -44,11 +44,11 @@ public class JdbcAccountDao implements AccountDao {
     }
 
     @Override
-    public List<Account> getListAccount() {
+    public List<Account> getListAccount(long accountId) {
         String sql ="Select account.user_id, username, balance , account_id" +
-                "  from account join tenmo_user on tenmo_user.user_id = account.user_id  ";
+                "  from account join tenmo_user on tenmo_user.user_id = account.user_id  where account_id != ? ";
          List<Account> list = new ArrayList<>();
-         SqlRowSet set = jdbcTemplate.queryForRowSet(sql);
+         SqlRowSet set = jdbcTemplate.queryForRowSet(sql,accountId );
          while(set.next()){
              list.add(mapRowToAccount(set));
          }
