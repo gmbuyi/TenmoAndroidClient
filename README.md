@@ -1,1 +1,1 @@
-# BankTemnoApp
+# Tenmo Android Client APP
